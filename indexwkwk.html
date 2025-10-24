@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanyaan Romantis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 50px;
+        }
+        
+        h1 {
+            color: #ff4d6d;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        #btn_mau {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        
+        #btn_gamau {
+            background-color: #6c757d;
+            color: white;
+            position: relative;
+        }
+        
+        #btn_mau:hover {
+            background-color: #e63950;
+            transform: scale(1.05);
+        }
+        
+        #btn_gamau:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hai Cantik!</h1>
+    <img src="https://c.tenor.com/com/Z8ezUHZzcLoAAAAC/Love.gif" alt="GIF cinta">
+    <h1>Mau jadi pacar saya lagi engga?</h1>
+    
+    <div class="buttons">
+        <button id="btn_mau" onclick="alert('I LOVE YOU')">Mau</button>
+        <button id="btn_gamau" onclick="gamau(this)">Gamau</button>
+    </div>
+
+    <script>
+        function gamau(button) {
+            // Mendapatkan dimensi jendela browser
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // Mendapatkan dimensi tombol
+            const buttonWidth = button.offsetWidth;
+            const buttonHeight = button.offsetHeight;
+            
+            // Menghasilkan posisi acak yang memastikan tombol tetap dalam viewport
+            const maxX = windowWidth - buttonWidth - 20; // 20px margin
+            const maxY = windowHeight - buttonHeight - 20;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            // Mengatur posisi tombol
+            button.style.position = "fixed";
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+        }
+    </script>
+</body>
+</html>
